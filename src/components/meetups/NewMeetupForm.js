@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import Card from '../ui/Card'
 import classes from './NewMeetupForm.module.css'
 
-function NewMeetupForm(){
+function NewMeetupForm(props){
 
     const titleInputRef = useRef()
     const imageInputRef = useRef()
@@ -24,7 +24,9 @@ function NewMeetupForm(){
             description: enteredDescription
         }
 
-        console.log(meetupData);
+        // https://react-getting-started-98b4f-default-rtdb.firebaseio.com/
+
+        props.onAddMeetup(meetupData)
     }
 
     return(
